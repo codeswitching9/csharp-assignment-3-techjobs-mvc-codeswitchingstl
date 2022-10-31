@@ -49,11 +49,13 @@ namespace TechJobsMVCAutograded.Controllers
             {
                 jobs = JobData.FindAll();
                 ViewBag.title = "View All";
-            }    
-            /*else
+            }
+            else
             {
-
-            }*/
+                ViewBag.title = "You selected " + column + " " + value;
+                jobs = JobData.FindByColumnAndValue(column, value);
+            }
+            ViewBag.jobs = jobs;
             return View();
         }
     }
