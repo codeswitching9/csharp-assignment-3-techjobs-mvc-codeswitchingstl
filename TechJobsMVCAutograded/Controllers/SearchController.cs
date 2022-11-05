@@ -24,7 +24,7 @@ namespace TechJobsMVCAutograded.Controllers
         public IActionResult Results(string searchType, string searchTerm)
         {
             List<Job> jobs = new List<Job>();
-            if (searchTerm == "all" || searchTerm == "")
+            if (searchTerm == null || searchTerm == "")
             {
                 jobs = JobData.FindAll();
             }
